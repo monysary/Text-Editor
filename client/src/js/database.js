@@ -13,19 +13,19 @@ const initdb = async () =>
   });
 
 export const putDb = async (content) => {
-  const contactDb = await openDB('contact', 1);
-  const tx = contactDb.transaction('contact', 'readwrite');
-  const store = tx.objectStore('contact');
-  const request = store.add({ content: content })
+  const contentDb = await openDB('jate', 1);
+  const tx = contentDb.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.add({ id: 1, content: content })
   const result = await request;
   
   console.log('Data saved!', result);
 };
 
 export const getDb = async () => {
-  const contactDb = await openDB('contact', 1);
-  const tx = contactDb.transaction('contact', 'readonly');
-  const store = tx.objectStore('contact');
+  const contentDb = await openDB('jate', 1);
+  const tx = contentDb.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
   const request = store.getAll();
   const result = await request;
 
