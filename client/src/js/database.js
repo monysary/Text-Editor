@@ -18,12 +18,19 @@ export const putDb = async (content) => {
   const store = tx.objectStore('contact');
   const request = store.add({ content: content })
   const result = await request;
-
+  
   console.log('Data saved!', result);
 };
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => {
 
+export const getDb = async () => {
+  const contactDb = await openDB('contact', 1);
+  const tx = contactDb.transaction('contact', 'readonly');
+  const store = tx.objectStore('contact');
+  const request = store.getAll();
+  const result = await request;
+
+  console.log('Result:', result);
+  return result;
 };
 
 initdb();
