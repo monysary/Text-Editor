@@ -1,9 +1,10 @@
 # Text Editor
 
 ## Description
+The Text Editor app is a progressive web application
 
 ## Installation
-The application can be accessed at the following link: 
+The application can be accessed at the following link: https://protected-island-28364.herokuapp.com/
 
 ## Usage
 
