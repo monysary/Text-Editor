@@ -16,7 +16,7 @@ export const putDb = async (content) => {
   const contentDb = await openDB('jate', 1);
   const tx = contentDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.add({ id: 1, content: content })
+  const request = store.put({ id: 1, value: content })
   const result = await request;
   
   console.log('Data saved!', result);
@@ -26,7 +26,7 @@ export const getDb = async () => {
   const contentDb = await openDB('jate', 1);
   const tx = contentDb.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-  const request = store.getAll();
+  const request = store.get(1);
   const result = await request;
 
   console.log('Result:', result);

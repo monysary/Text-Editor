@@ -34,10 +34,10 @@ module.exports = () => {
         name: 'J.A.T.E',
         short_name: 'Text Editor',
         description: 'Just another text editor',
-        background_color: '#9EACB7',
-        theme_color: '#9EACB7',
-        start_url: './',
-        publicPath: './',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: '/',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
